@@ -213,3 +213,16 @@ urlpatterns = [
 ```
 <p>url patterns are set according to the dynamic url created in models.py</p>
 
+<h2>Few Screenshot of the Project</h2>
+
+
+![](1.png)
+
+![](2.png)
+
+
+![](3.png)
+
+![](4.png)
+
+
