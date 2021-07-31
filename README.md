@@ -69,7 +69,8 @@ class RawPatientForm(forms.Form):
     Image = forms.FileField()
     
 ```
-<p>models.py</p>
+<p>models.py</p><br>
+<p>Dynamic url is used to access the perticular id of the patient</p>
 
 ```python
 from django.db import models
@@ -97,4 +98,118 @@ class Patient(models.Model):
         return reverse("patient:detail", kwargs={"pk": self.pk})
     
 ```
+
+<p>views.py</p>
+
+```python
+
+from django.shortcuts import render,get_object_or_404,redirect
+from django.views.generic import ListView,DetailView
+from .models import Patient
+from .forms import PatientForm ,RawPatientForm
+import datetime
+
+class HomeView(ListView):
+    model = Patient
+    template_name = "patient/home.html"
+
+class PatientDetailView(DetailView):
+    model = Patient
+    template_name = "patient/detail.html"
+    
+def patient_create_view(request):
+    
+    
+    med_form = RawPatientForm()
+    if request.method == "POST" or None:
+        med_form = RawPatientForm(request.POST or None , request.FILES or None)
+        if med_form.is_valid():
+            Patient.objects.create(**med_form.cleaned_data)
+            return redirect('../')
+    context = {'form':med_form}
+    
+
+    return render(request,"patient/create.html",context)
+
+def patient_delete_view(request,pk):
+    patient = get_object_or_404(Patient,pk = pk)
+    if request.method == "POST":
+        patient.delete()
+        return redirect('../../')
+    context = {
+        "patient":patient
+    }
+    return render(request,"patient/delete.html",context)
+
+def patient_update_view(request,pk):
+    patient = get_object_or_404(Patient,pk = pk)
+    med_form = PatientForm(request.POST or None,request.FILES or None , instance = patient)
+    if med_form.is_valid():
+        med_form.save()
+        return redirect('../../')
+    context = {
+        'form':med_form
+    }
+    return render(request,"patient/update.html",context)
+    
+```
+<p>Some changes in settings.py to needed</p>
+
+```python
+import os
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'patient'
+]
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR,"templates")],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
+            ],
+        },
+    },
+]
+
+TIME_ZONE = 'Asia/Kolkata'
+
+MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
+MEDIA_URL = '/media/'
+
+```
+<p> I have include my own urls.py in paient folder</p>
+
+```python
+from django.urls import path
+from .views import HomeView,PatientDetailView,patient_create_view,patient_delete_view,patient_update_view
+
+app_name = 'patient'
+
+urlpatterns = [
+    path('',HomeView.as_view(),name = 'home'),
+    path('detail/<int:pk>/',PatientDetailView.as_view(),name = 'detail'),
+    path('create/',patient_create_view,name = 'create'),
+    path('delete/<int:pk>/',patient_delete_view,name = 'delete'),
+    path('update/<int:pk>/',patient_update_view,name = 'update')
+]
+
+```
+<p>url patterns are set according to the dynamic url created in models.py</p>
 
