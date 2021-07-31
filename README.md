@@ -31,7 +31,7 @@ python manage.py runserver <br>
 
 <p>python3 manage.py createsuperuser</p>
 
-<h2>Import CodeSnippents</h2>
+<h2>Important CodeSnippents</h2>
 
 <p>forms.py</p>
 
