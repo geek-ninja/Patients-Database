@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+*{
+    margin: 0;
+}
+.home_nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2D3E50;
+    width: 100%;
+}
+.home_nav_logo{
+    display: flex;
+    align-items: center;
+    padding: 5px 50px;
+    color: white;
+    font-family: 'Gowun Dodum', sans-serif;
+    font-weight: 800px;
+    font-size: 20px;
+}
+.home_nav_logo > span{
+    margin-left: 10px;
+}
+.home_nav_logo > img{
+    width: 100px;
+}
+.home_nav_btns{
+    flex: 0.6;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.home_nav_btn{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+.home_nav_btn > a{
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+    font-size: 20px;
+    font-family: 'Gowun Dodum', sans-serif;
+    transition: 300ms ease-in-out;
+}
+.home_nav_btn:hover > a{
+    transform: scale(1.5);
+    color: #01D28E;
+}
+.home_body_mid{
+    background-image: url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v873batch2-bb-06-l_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=0632138e42877e929f6a805ce0860903');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 100%;
+    overflow-x: hidden;
+}
+.home_body_mid{
+    font-weight: 700;
+    color: white;
+}
+.home_main_text{
+    width: 500px;
+}
+
+.home_main_text > p{
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+}
+.home_body_mid_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    font-family: 'Gowun Dodum', sans-serif;
+    padding: 0 50px;
+}
+.home_main_btn > a{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Gowun Dodum', sans-serif;
+    font-weight: 800;
+}
+.home_patients{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 950px;
+    width: 100%;
+}
+.home_all_patients{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #7DD3DA;
+    font-family: 'Gowun Dodum', sans-serif;
+    font-weight: 800;
+}
+.home_all_patients > h1{
+    text-align: center;
+    font-family: 'Gowun Dodum', sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+    color:rgb(255, 216, 58);
+}
+.home_patient{
+    margin: 5px 5px;
+}
+.patient_img{
+    max-width: 300px;
+    max-height: 220px;
+    width: 100%;
+    object-fit: contain;
+    transition: 300ms ease-in-out;
+    border-radius: 10px;
+}
+.patient_img:hover{
+    transform: scale(1.05);
+}
+.home_footer{
+    text-align: center;
+    padding: 30px 0 ;
+    width: 100%;
+    color: white;
+    background-color: #2D3E50;
+    font-family: 'Gowun Dodum', sans-serif;
+    font-weight: 800;
+}
+@media screen and (max-width: 800px){
+    .home_nav_btns{
+        display: none;
+    }
+    .home_main_text{
+        width: 100%;
+    }
+    .home_main_text > p{
+        font-size: 25px;
+    }
+    .home_body_mid_content{
+        padding: 0 5px;
+    }
+}

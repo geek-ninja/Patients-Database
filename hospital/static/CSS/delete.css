@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+*{
+    margin: 0;
+}
+.home_nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2D3E50;
+    width: 100%;
+}
+.home_nav_logo{
+    display: flex;
+    align-items: center;
+    padding: 5px 50px;
+    color: white;
+    font-family: 'Gowun Dodum', sans-serif;
+    font-weight: 800px;
+    font-size: 20px;
+}
+.home_nav_logo > span{
+    margin-left: 10px;
+}
+.home_nav_logo > img{
+    width: 100px;
+}
+.home_nav_btns{
+    flex: 0.6;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.home_nav_btn{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+.home_nav_btn > a{
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+    font-size: 20px;
+    font-family: 'Gowun Dodum', sans-serif;
+    transition: 300ms ease-in-out;
+}
+.home_nav_btn:hover > a{
+    transform: scale(1.5);
+    color: #01D28E;
+}
+.delete_body{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    font-weight: 800;
+    font-family: 'Gowun Dodum', sans-serif;
+    background-color: #EBECEE;
+}
+.delete_form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    background-color: #01D28E;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+input[type=submit]{
+    width: 100px;
+    background-color: #6C5CE7;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 800;
+}
+input[type=submit]:hover {
+    background-color: rgb(86, 73, 190);
+}
+.back_btn{
+    width: 100px;
+    background-color: #6C5CE7;
+    color: white;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 800;
+    text-decoration: none;
+}
+.back_btn:hover {
+    background-color: rgb(86, 73, 190);
+}
+@media screen and (max-width: 800px){
+    .home_nav_btns{
+        display: none;
+    }
+}

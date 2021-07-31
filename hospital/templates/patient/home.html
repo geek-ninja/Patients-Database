@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medico</title>
+    <link rel="stylesheet" href="{% static 'CSS/home.css' %}">
+</head>
+<body class="home_body">
+    <div class="home_nav">
+        <div class="home_nav_logo"><img src="{% static 'IMG/logo.png' %}"/> <span><strong>MEDICO</strong></span></div>
+        <div class="home_nav_btns">
+            <div class="home_nav_btn"><a href="{% url 'patient:home' %}">Home</a></div>
+            <div class="home_nav_btn"><a href="#">About</a></div>
+            <div class="home_nav_btn"><a href="{% url 'patient:create' %}">Register</a></div>
+            <div class="home_nav_btn"><a href="#">Contact</a></div>
+        </div>
+    </div>
+    <div class="home_body_mid">
+        <div class="home_body_mid_content">
+            <h1>Welcome to MEDICO</h1>
+            <div class="home_main_text"><p>Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less.</p></div>
+            <div class="home_main_btn"><a class="button" href="{% url 'patient:create' %}">Register</a></div>
+        </div>
+    </div>
+    {% block content %}
+    <div class="home_all_patients">
+        <h1>Our Patients</h1>
+        <div class="home_patients">
+            {% for i in object_list %}
+                <div class="home_patient">
+                    <a href = "{{i.get_absolute_url}}"><img class="patient_img" src = "{{MEDIA_URL}}{{i.Image}}" width = '300px'/></a>
+                    <p>Name : {{i.First_Name}} {{i.Last_Name}}</p>
+                    <p>Age: {{i.Age}}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock %}
+    <div class="home_footer">
+        <p>MEDICO @ All rights reserved</p>
+    </div>
+</body>
+</html>

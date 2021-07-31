@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete User</title>
+    <link rel="stylesheet" href="{% static 'CSS/delete.css' %}">
+</head>
+<body class="delete_body">
+    <div class="home_nav">
+        <div class="home_nav_logo"><img src="{% static 'IMG/logo.png' %}"/> <span><strong>MEDICO</strong></span></div>
+        <div class="home_nav_btns">
+            <div class="home_nav_btn"><a href="{% url 'patient:home' %}">Home</a></div>
+            <div class="home_nav_btn"><a href="#">About</a></div>
+            <div class="home_nav_btn"><a href="{% url 'patient:create' %}">Register</a></div>
+            <div class="home_nav_btn"><a href="#">Contact</a></div>
+        </div>
+    </div>
+    <div class="delete_body">
+        <div class="delete_form">
+            {% block content %}
+                <form action = '.' method = 'POST'>{% csrf_token %}
+                    <img class="" src = "{{MEDIA_URL}}{{patient.Image}}" width = '300px'/>
+                    <h2>{{patient.First_Name}} {{patient.Last_Name}}</h2>
+                    <p>Do you want to remove the record ?</p>
+                    <input type = 'submit' value = 'Yes'> <a class = 'back_btn' href = '../../'>Cancel</a>
+                </form>    
+            {% endblock content %}
+        </div>
+    </div>
+</body>
+</html>

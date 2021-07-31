@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Detail</title>
+    <link rel="stylesheet" href="{% static 'CSS/detail.css' %}">
+</head>
+<body class="detail_body">
+    <div class="home_nav">
+        <div class="home_nav_logo"><img src="{% static 'IMG/logo.png' %}"/> <span><strong>MEDICO</strong></span></div>
+        <div class="home_nav_btns">
+            <div class="home_nav_btn"><a href="{% url 'patient:home' %}">Home</a></div>
+            <div class="home_nav_btn"><a href="#">About</a></div>
+            <div class="home_nav_btn"><a href="{% url 'patient:create' %}">Register</a></div>
+            <div class="home_nav_btn"><a href="#">Contact</a></div>
+        </div>
+    </div>
+    <div class="details_body">
+        <div class="patient_detail">
+            {% block content %}
+            <img class="" src = "{{MEDIA_URL}}{{object.Image}}" width = '300px'/>
+            <div class="patient_details">
+                <p>Name : {{object.First_Name}} {{object.Last_Name}}</p>
+                <p>Gender : {{object.Gender}}</p>
+                <p>Age: {{object.Age}}</p>
+                <p>Disease: {{object.Disease}}</p>
+                <p>Doctor Assigned : {{object.Doctor_name}}</p>
+                <p>Doctor Fees : ₹ {{object.Doctor_fees}}</p>
+                <p>Date : {{object.Starting_data_of_meds}}</p>
+            </div>
+            <a class = 'button' href = "{% url 'patient:delete' object.id  %}">delete</a>  <a class = 'button' href = "{% url 'patient:update' object.id  %}">update</a> <a  class = 'button' href="../../">Back</a> 
+        {% endblock content %}
+        </div>
+    </div>
+</body>
+</html>

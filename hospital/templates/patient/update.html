@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Your Data</title>
+    <link rel="stylesheet" href="{% static 'CSS/create.css' %}">
+</head>
+<body class="create_body">
+    <div class="home_nav">
+        <div class="home_nav_logo"><img src="{% static 'IMG/logo.png' %}"/> <span><strong>MEDICO</strong></span></div>
+        <div class="home_nav_btns">
+            <div class="home_nav_btn"><a href="{% url 'patient:home' %}">Home</a></div>
+            <div class="home_nav_btn"><a href="#">About</a></div>
+            <div class="home_nav_btn"><a href="{% url 'patient:create' %}">Register</a></div>
+            <div class="home_nav_btn"><a href="#">Contact</a></div>
+        </div>
+    </div>
+    <h1>Register Your Data</h1>
+    <div class="create_field">
+        <div class="form_field">
+            {% block content %}
+            <form class="main_form" enctype="multipart/form-data" action = "" method="POST">{% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="Save"/>  <a class = 'back_button' href="../../">Back</a>
+            </form>
+            {% endblock content %}
+        </div>
+    </div>
+</body>
+</html>
