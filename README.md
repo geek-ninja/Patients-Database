@@ -25,6 +25,12 @@ python3 manage.py makemigrations
 python3 manage.py migrate <br> 
 python manage.py runserver <br> 
 
+<h2>To access the admin portal of Django</h2>
+
+<p>follow the commands and give your own password and username</p>
+
+<p>python3 manage.py createsuperuser</p>
+
 <h2>Import CodeSnippents</h2>
 
 <p>forms.py</p>
@@ -215,14 +221,18 @@ urlpatterns = [
 
 <h2>Few Screenshot of the Project</h2>
 
+<p> display patients (home.html)</p>
 
 ![](1.png)
 
 ![](2.png)
 
+<p>Detail view of the perticular patient (detail.html)</p>
 
 ![](3.png)
 
+<p>delete page</p>
+
 ![](4.png)
 
-
+<h2>Contributions to this project is highly appreciable</p>
