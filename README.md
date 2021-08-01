@@ -233,6 +233,6 @@ urlpatterns = [
 
 <p>delete page</p>
 
-![](4.png)
+![](del.png)
 
 <h2>Contributions to this project is highly appreciable</p>
