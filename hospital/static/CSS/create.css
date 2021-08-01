@@ -142,6 +142,9 @@ input[type=submit]:hover {
     font-weight: 800;
     text-decoration: none;
 }
+.back_button:hover{
+    background-color: rgb(86, 73, 190);
+}
 @media screen and (max-width: 800px){
     .home_nav_btns{
         display: none;
