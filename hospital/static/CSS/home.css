@@ -71,7 +71,7 @@
     font-family: 'Gowun Dodum', sans-serif;
     font-size: 30px;
     font-weight: 700;
-    color: white;
+    color: #6C5CE7;
 }
 .home_body_mid_content{
     display: flex;
@@ -81,8 +81,12 @@
     font-family: 'Gowun Dodum', sans-serif;
     padding: 0 50px;
 }
+.home_body_mid_content > h1{
+    color: #6C5CE7;
+    font-weight: 800;
+}
 .home_main_btn > a{
-    background-color: #4CAF50;
+    background-color: #6C5CE7;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -95,7 +99,13 @@
     border-radius: 10px;
     font-family: 'Gowun Dodum', sans-serif;
     font-weight: 800;
+    transition: 300ms ease-in-out;
 }
+.home_main_btn > a:hover{
+    transform: scale(1.02);
+    box-shadow: 3px 3px 5px 3px rgb(210, 96, 238);
+}
+
 .home_patients{
     display: flex;
     flex-wrap: wrap;
