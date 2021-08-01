@@ -98,8 +98,22 @@ input[type=submit]:hover {
 .back_btn:hover {
     background-color: rgb(86, 73, 190);
 }
+.home_footer{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    padding: 30px 0 ;
+    width: 100%;
+    color: white;
+    background-color: #2D3E50;
+    font-family: 'Gowun Dodum', sans-serif;
+    font-weight: 800;
+}
 @media screen and (max-width: 800px){
     .home_nav_btns{
         display: none;
+    }
+    .home_footer{
+        position: fixed;
     }
 }
