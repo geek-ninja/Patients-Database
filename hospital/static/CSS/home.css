@@ -53,7 +53,7 @@
 .home_body_mid{
     background-image: url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v873batch2-bb-06-l_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=0632138e42877e929f6a805ce0860903');
     background-position: top;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     height: 500px;
     width: 100%;
@@ -151,6 +151,9 @@
     background-color: #2D3E50;
     font-family: 'Gowun Dodum', sans-serif;
     font-weight: 800;
+}
+.home_body{
+    background-color: #7DD3DA;
 }
 @media screen and (max-width: 800px){
     .home_nav_btns{
