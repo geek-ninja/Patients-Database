@@ -223,7 +223,7 @@ urlpatterns = [
 
 <p> display patients (home.html)</p>
 
-![](1.png)
+![](home.png)
 
 ![](2.png)
 
